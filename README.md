@@ -111,6 +111,11 @@ Este projeto é apenas para fins educacionais e de uso pessoal. Respeite os term
 
 ---
 
+### Licença
+Este projeto é distribuído sob a licença MIT. Consulte o arquivo `LICENSE` para detalhes.
+
+---
+
 ### Créditos
 Repositório: `lucasgfabris/PyTube`
 
