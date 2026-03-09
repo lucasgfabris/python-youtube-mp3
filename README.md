@@ -1,122 +1,131 @@
-## PyTube — Baixar playlist do YouTube em MP3 (Windows)
+# PyTube
 
-Aplicativo simples em interface gráfica (Tkinter) para baixar playlists do YouTube e extrair o áudio em MP3 usando `yt-dlp` e `ffmpeg`.
+![GitHub repo size](https://img.shields.io/github/repo-size/lucasgfabris/PyTube?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/lucasgfabris/PyTube?style=for-the-badge)
 
----
+> Aplicativo com interface grafica (Tkinter) para baixar playlists do YouTube e extrair o audio em MP3 usando yt-dlp e ffmpeg.
 
-### Download rápido (binário)
-- **ZIP do projeto:** [Baixar PyTube](https://github.com/lucasgfabris/PyTube/archive/refs/heads/main.zip)
-- Extraia o `.zip` em uma pasta de sua preferência.
-- Entre na pasta extraída e localize a subpasta `dist`.
-- Abra o arquivo `PyTube.exe` que está dentro de `dist`.
+<img src="imagem.png" alt="PyTube">
 
-Observação: dependendo da sua build, o executável pode se chamar `main.exe`. Se for o seu caso, basta utilizá-lo do mesmo jeito.
+## Pre-requisitos
 
----
+Antes de comecar, verifique se voce atendeu aos seguintes requisitos:
 
-### Requisitos (para o binário)
-Para que a conversão para MP3 funcione, o `yt-dlp` utiliza o `ffmpeg`:
-- `yt-dlp.exe` disponível no PATH do Windows ou na mesma pasta do `PyTube.exe`.
+### Para o binario (.exe)
+
+- `yt-dlp.exe` disponivel no PATH ou na mesma pasta do PyTube.exe
   - Download: [Releases do yt-dlp](https://github.com/yt-dlp/yt-dlp/releases)
-- `ffmpeg.exe` disponível no PATH do Windows (ou na mesma pasta do executável).
+- `ffmpeg.exe` disponivel no PATH ou na mesma pasta do executavel
   - Download: [FFmpeg - Downloads](https://ffmpeg.org/download.html)
 
-Se preferir, você pode copiar `yt-dlp.exe` e `ffmpeg.exe` para a mesma pasta do `PyTube.exe` (dentro de `dist`).
+### Para rodar pelo codigo-fonte
 
----
+- Python 3.8+ (Windows)
+- yt-dlp e ffmpeg instalados no PATH
 
-### Como usar
-1. Abra o `PyTube.exe` (em `dist`).
-2. No campo "YouTube playlist link:", cole o link da playlist do YouTube.
-3. No campo "Destination folder path:", escolha a pasta onde deseja salvar os arquivos MP3.
-4. Clique em "Download Playlist".
+## Instalando
 
-Detalhes importantes:
-- O aplicativo extrai o áudio da playlist em MP3 usando o `yt-dlp` com as opções `-x --audio-format mp3`.
-- Os arquivos são salvos com o padrão de nome: título do vídeo + extensão, por exemplo: `Nome do Vídeo.mp3`.
-- Caso haja erro em algum item da playlist, o link é registrado em `errors.txt` dentro da pasta de destino.
+### Download rapido (binario)
 
----
+1. Baixe o ZIP: [Baixar PyTube](https://github.com/lucasgfabris/PyTube/archive/refs/heads/main.zip)
+2. Extraia o `.zip` em uma pasta de sua preferencia
+3. Entre na pasta extraida e localize a subpasta `dist`
+4. Abra o arquivo `PyTube.exe`
 
-### Criar atalho do executável (Windows)
-Para facilitar o acesso:
-1. Navegue até a pasta `dist` do projeto.
-2. Clique com o botão direito em `PyTube.exe`.
-3. Escolha uma das opções:
-   - "Enviar para" > "Área de trabalho (criar atalho)", ou
-   - "Criar atalho" e depois mova o atalho para onde preferir (por exemplo, a Área de Trabalho).
+### Instalar pelo codigo-fonte
 
----
-
-### Executar pelo código-fonte (opcional)
-Se preferir rodar direto pelo Python:
-
-1. Requisitos:
-   - Python 3.8+ (Windows)
-   - `yt-dlp` e `ffmpeg` instalados/visíveis no PATH
-2. Instale as dependências Python:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Execute:
-   ```bash
-   python main.py
-   ```
-
-Opcional: para pré-preencher o campo de destino, defina a variável de ambiente do Windows `DOWNLOAD_PATH` com o caminho desejado (Painel de Controle > Sistema > Configurações avançadas > Variáveis de Ambiente).
-
----
-
-### Build do executável (opcional)
-Há um arquivo `main.spec` para uso com PyInstaller.
-
-Com PyInstaller instalado (`pip install pyinstaller`), você pode gerar o executável com:
 ```bash
+git clone https://github.com/lucasgfabris/PyTube.git
+cd PyTube
+pip install -r requirements.txt
+```
+
+## Usando
+
+Para usar o PyTube, siga estas etapas:
+
+### Executar o binario
+
+1. Abra o `PyTube.exe` (em `dist`)
+2. No campo "YouTube playlist link:", cole o link da playlist
+3. No campo "Destination folder path:", escolha a pasta de destino
+4. Clique em "Download Playlist"
+
+### Executar pelo codigo-fonte
+
+```bash
+python main.py
+```
+
+### Detalhes importantes
+
+- O aplicativo extrai o audio da playlist em MP3 usando o yt-dlp
+- Os arquivos sao salvos com o padrao: titulo do video + extensao
+- Caso haja erro em algum item, o link e registrado em `errors.txt`
+
+### Variavel de ambiente (opcional)
+
+Defina `DOWNLOAD_PATH` para pre-preencher o campo de destino:
+
+```
+Painel de Controle > Sistema > Configuracoes avancadas > Variaveis de Ambiente
+```
+
+## Gerando o executavel
+
+Com PyInstaller instalado:
+
+```bash
+pip install pyinstaller
 pyinstaller main.spec
 ```
-O executável será gerado em `dist`.
 
----
+O executavel sera gerado em `dist`.
 
-### Solução de problemas
-- **Erro: yt-dlp não encontrado**
-  - Garanta que `yt-dlp.exe` esteja no PATH ou na mesma pasta do `PyTube.exe`.
-- **Erro: ffmpeg não encontrado / conversão para MP3 falha**
-  - Instale o `ffmpeg` e garanta que `ffmpeg.exe` esteja no PATH ou na mesma pasta do executável.
-- **Permissões de escrita**
-  - Verifique se a pasta de destino tem permissões de escrita.
-- **Link(s) com erro**
-  - Consulte o arquivo `errors.txt` gerado na pasta de destino para ver quais links falharam.
+## Tecnologias
 
----
+| Categoria | Tecnologias |
+|-----------|-------------|
+| Linguagem | Python 3.8+ |
+| Interface | Tkinter |
+| Download | yt-dlp |
+| Conversao | ffmpeg |
+| Build | PyInstaller |
 
-### O que este app faz internamente
-- Interface gráfica simples com Tkinter (campos para URL da playlist e pasta de destino).
-- Executa `yt-dlp.exe` via `subprocess` com as flags necessárias para extrair áudio em MP3.
-- Cria a pasta de destino automaticamente caso não exista.
-- Em caso de erro, registra o link problemático em `errors.txt`.
+## Estrutura do Projeto
 
----
+```
+PyTube/
+├── main.py           # Codigo principal (Tkinter + yt-dlp)
+├── requirements.txt  # Dependencias Python
+├── main.spec         # Configuracao do PyInstaller
+├── dist/             # Pasta do executavel gerado
+└── LICENSE           # Licenca MIT
+```
 
-### Estrutura do projeto (resumo)
-- `main.py`: código-fonte principal (Tkinter + chamada ao yt-dlp)
-- `requirements.txt`: dependências Python (ex.: `python-dotenv`)
-- `main.spec`: configuração de build do PyInstaller
-- `dist/`: pasta onde o executável é gerado (ex.: `PyTube.exe`)
+## Solucao de problemas
 
----
+| Problema | Solucao |
+|----------|---------|
+| yt-dlp nao encontrado | Coloque `yt-dlp.exe` no PATH ou na pasta do executavel |
+| ffmpeg nao encontrado | Coloque `ffmpeg.exe` no PATH ou na pasta do executavel |
+| Permissoes de escrita | Verifique se a pasta de destino tem permissoes |
+| Links com erro | Consulte `errors.txt` na pasta de destino |
 
-### Aviso legal
-Este projeto é apenas para fins educacionais e de uso pessoal. Respeite os termos de serviço do YouTube e as leis de direitos autorais da sua região.
+## Contribuindo
 
----
+Para contribuir com PyTube, siga estas etapas:
 
-### Licença
-Este projeto é distribuído sob a licença MIT. Consulte o arquivo `LICENSE` para detalhes.
+1. Bifurque este repositorio.
+2. Crie um branch: `git checkout -b <nome_branch>`.
+3. Faca suas alteracoes e confirme-as: `git commit -m '<mensagem_commit>'`
+4. Envie para o branch original: `git push origin <nome_branch>`
+5. Crie a solicitacao de pull.
 
----
+## Aviso Legal
 
-### Créditos
-Repositório: `lucasgfabris/PyTube`
+Este projeto e apenas para fins educacionais e de uso pessoal. Respeite os termos de servico do YouTube e as leis de direitos autorais da sua regiao.
 
+## Licenca
 
+Esse projeto esta sob licenca MIT.
