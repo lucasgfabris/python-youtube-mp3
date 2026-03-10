@@ -1,11 +1,11 @@
-# PyTube
+# Python YouTube Audio
 
-![GitHub repo size](https://img.shields.io/github/repo-size/lucasgfabris/PyTube?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/lucasgfabris/PyTube?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/lucasgfabris/python-youtube-audio?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/lucasgfabris/python-youtube-audio?style=for-the-badge)
 
 > Aplicativo com interface grafica (Tkinter) para baixar playlists do YouTube e extrair o audio em MP3 usando yt-dlp e ffmpeg.
 
-<img src="imagem.png" alt="PyTube">
+<img src="imagem.png" alt="Python YouTube Audio">
 
 ## Pre-requisitos
 
@@ -13,7 +13,7 @@ Antes de comecar, verifique se voce atendeu aos seguintes requisitos:
 
 ### Para o binario (.exe)
 
-- `yt-dlp.exe` disponivel no PATH ou na mesma pasta do PyTube.exe
+- `yt-dlp.exe` disponivel no PATH ou na mesma pasta do executavel
   - Download: [Releases do yt-dlp](https://github.com/yt-dlp/yt-dlp/releases)
 - `ffmpeg.exe` disponivel no PATH ou na mesma pasta do executavel
   - Download: [FFmpeg - Downloads](https://ffmpeg.org/download.html)
@@ -27,26 +27,27 @@ Antes de comecar, verifique se voce atendeu aos seguintes requisitos:
 
 ### Download rapido (binario)
 
-1. Baixe o ZIP: [Baixar PyTube](https://github.com/lucasgfabris/PyTube/archive/refs/heads/main.zip)
+1. Baixe o ZIP: [Baixar Python YouTube Audio](https://github.com/lucasgfabris/python-youtube-audio/archive/refs/heads/main.zip)
 2. Extraia o `.zip` em uma pasta de sua preferencia
 3. Entre na pasta extraida e localize a subpasta `dist`
-4. Abra o arquivo `PyTube.exe`
+4. Abra o arquivo `python-youtube-audio.exe`
 
 ### Instalar pelo codigo-fonte
 
 ```bash
-git clone https://github.com/lucasgfabris/PyTube.git
-cd PyTube
-pip install -r requirements.txt
+git clone https://github.com/lucasgfabris/python-youtube-audio.git
+cd python-youtube-audio
+pip install -e .
+# ou: pip install -r requirements.txt
 ```
 
 ## Usando
 
-Para usar o PyTube, siga estas etapas:
+Para usar o Python YouTube Audio, siga estas etapas:
 
 ### Executar o binario
 
-1. Abra o `PyTube.exe` (em `dist`)
+1. Abra o `python-youtube-audio.exe` (em `dist`)
 2. No campo "YouTube playlist link:", cole o link da playlist
 3. No campo "Destination folder path:", escolha a pasta de destino
 4. Clique em "Download Playlist"
@@ -95,9 +96,10 @@ O executavel sera gerado em `dist`.
 ## Estrutura do Projeto
 
 ```
-PyTube/
+python-youtube-audio/
 ├── main.py           # Codigo principal (Tkinter + yt-dlp)
-├── requirements.txt  # Dependencias Python
+├── pyproject.toml    # Metadados e dependencias
+├── requirements.txt  # Dependencias (alternativa)
 ├── main.spec         # Configuracao do PyInstaller
 ├── dist/             # Pasta do executavel gerado
 └── LICENSE           # Licenca MIT
@@ -114,7 +116,7 @@ PyTube/
 
 ## Contribuindo
 
-Para contribuir com PyTube, siga estas etapas:
+Para contribuir com Python YouTube Audio, siga estas etapas:
 
 1. Bifurque este repositorio.
 2. Crie um branch: `git checkout -b <nome_branch>`.

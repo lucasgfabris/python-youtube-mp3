@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-youtube-audio"
+version = "1.0.0"
+description = "Aplicativo com interface gráfica (Tkinter) para baixar playlists do YouTube e extrair o áudio em MP3 usando yt-dlp e ffmpeg"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+build = [
+    "pyinstaller>=6.0.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = []
