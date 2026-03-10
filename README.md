@@ -1,11 +1,11 @@
-# Python YouTube Audio
+# Python YouTube MP3
 
-![GitHub repo size](https://img.shields.io/github/repo-size/lucasgfabris/python-youtube-audio?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/lucasgfabris/python-youtube-audio?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/lucasgfabris/python-youtube-mp3?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/lucasgfabris/python-youtube-mp3?style=for-the-badge)
 
 > Aplicativo com interface grafica (Tkinter) para baixar playlists do YouTube e extrair o audio em MP3 usando yt-dlp e ffmpeg.
 
-<img src="imagem.png" alt="Python YouTube Audio">
+<img src="imagem.png" alt="Python YouTube MP3">
 
 ## Pre-requisitos
 
@@ -27,27 +27,27 @@ Antes de comecar, verifique se voce atendeu aos seguintes requisitos:
 
 ### Download rapido (binario)
 
-1. Baixe o ZIP: [Baixar Python YouTube Audio](https://github.com/lucasgfabris/python-youtube-audio/archive/refs/heads/main.zip)
+1. Baixe o ZIP: [Baixar Python YouTube MP3](https://github.com/lucasgfabris/python-youtube-mp3/archive/refs/heads/main.zip)
 2. Extraia o `.zip` em uma pasta de sua preferencia
 3. Entre na pasta extraida e localize a subpasta `dist`
-4. Abra o arquivo `python-youtube-audio.exe`
+4. Abra o arquivo `python-youtube-mp3.exe`
 
 ### Instalar pelo codigo-fonte
 
 ```bash
-git clone https://github.com/lucasgfabris/python-youtube-audio.git
-cd python-youtube-audio
+git clone https://github.com/lucasgfabris/python-youtube-mp3.git
+cd python-youtube-mp3
 pip install -e .
 # ou: pip install -r requirements.txt
 ```
 
 ## Usando
 
-Para usar o Python YouTube Audio, siga estas etapas:
+Para usar o Python YouTube MP3, siga estas etapas:
 
 ### Executar o binario
 
-1. Abra o `python-youtube-audio.exe` (em `dist`)
+1. Abra o `python-youtube-mp3.exe` (em `dist`)
 2. No campo "YouTube playlist link:", cole o link da playlist
 3. No campo "Destination folder path:", escolha a pasta de destino
 4. Clique em "Download Playlist"
@@ -96,7 +96,7 @@ O executavel sera gerado em `dist`.
 ## Estrutura do Projeto
 
 ```
-python-youtube-audio/
+python-youtube-mp3/
 ├── main.py           # Codigo principal (Tkinter + yt-dlp)
 ├── pyproject.toml    # Metadados e dependencias
 ├── requirements.txt  # Dependencias (alternativa)
@@ -116,7 +116,7 @@ python-youtube-audio/
 
 ## Contribuindo
 
-Para contribuir com Python YouTube Audio, siga estas etapas:
+Para contribuir com Python YouTube MP3, siga estas etapas:
 
 1. Bifurque este repositorio.
 2. Crie um branch: `git checkout -b <nome_branch>`.

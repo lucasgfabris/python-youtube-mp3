@@ -3,7 +3,7 @@ requires = ["setuptools>=45", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "python-youtube-audio"
+name = "python-youtube-mp3"
 version = "1.0.0"
 description = "Aplicativo com interface gráfica (Tkinter) para baixar playlists do YouTube e extrair o áudio em MP3 usando yt-dlp e ffmpeg"
 readme = "README.md"

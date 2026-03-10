@@ -22,7 +22,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='python-youtube-audio',
+    name='python-youtube-mp3',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
